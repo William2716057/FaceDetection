@@ -20,4 +20,16 @@ while True:
         flags=cv2.CASCADE_SCALE_IMAGE
     )
 
+#plotting
+for (x, y, width, height) in faces:
+    cv2.rectangle(frame, (x, y),(x+width, y+height), (255, 255, 0), 2)
+
+    cv2.imshow("Faces", frame)
+    if cv2.waitKey(1) == ord("q"):
+
+        break
+    camera.release()
+    cv2.destroyAllWindows()
+
+
 
