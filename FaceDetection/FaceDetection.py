@@ -22,8 +22,10 @@ while True:
 
 #plotting
     for (x, y, width, height) in faces:
-        cv2.rectangle(frame, (x, y), (x+width, y+height), (255, 255, 0), 2)
+        cv2.rectangle(frame, (x, y), (x+width, y+height), (0, 255, 0), 2)#display in green box
 
+        text = "Face Detected"
+        cv2.putText(frame, text, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2, cv2.LINE_AA)
         # Display the frame with rectangles around faces
         cv2.imshow("Faces", frame)
 
