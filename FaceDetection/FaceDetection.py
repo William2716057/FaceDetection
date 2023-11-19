@@ -21,15 +21,18 @@ while True:
     )
 
 #plotting
-for (x, y, width, height) in faces:
-    cv2.rectangle(frame, (x, y),(x+width, y+height), (255, 255, 0), 2)
+    for (x, y, width, height) in faces:
+        cv2.rectangle(frame, (x, y), (x+width, y+height), (255, 255, 0), 2)
 
-    cv2.imshow("Faces", frame)
-    if cv2.waitKey(1) == ord("q"):
+        # Display the frame with rectangles around faces
+        cv2.imshow("Faces", frame)
 
-        break
-    camera.release()
-    cv2.destroyAllWindows()
+        if cv2.waitKey(1) == ord("q"):
+            break
+
+camera.release()
+cv2.destroyAllWindows()
+
 
 
 
